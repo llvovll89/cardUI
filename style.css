@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Silkscreen', cursive;
+}
+
+body {
+    background: #000000;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#wrap {
+    min-height: 100vh;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cardUI {
+    position: relative;
+    margin: 5px;
+    width: 160px;
+    height: 220px;
+    perspective: 1000px;
+}
+
+.cardUI .front,.back {
+    height: 220px;
+}
+
+.cardUI .front {
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform .4s linear;
+}
+
+.cardUI .back {
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition: transform .4s linear;
+}
+
+.cardUI:hover .front {
+    transform: rotateY(0deg);
+    cursor: pointer;
+}
+
+.cardUI:hover .back {
+    transform: rotateY(-180deg);
+    cursor: pointer;
+}
